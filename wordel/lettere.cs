@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Android.Util;
+using Microsoft.Xna.Framework.Audio;
 
 namespace wordel
 {
@@ -11,19 +12,33 @@ namespace wordel
 	{
 		Texture2D _lettera;
 		Texture2D _letteraCliccata;
-		SpriteFont sf;
-		bool isClicked { get; set; }
+		//SpriteFont sf;
+		SoundEffect boom;
+		SoundEffectInstance sfx;
+		public bool isClicked { get; set; }
+		private string _nomeLettera;
 		Vector2 vel;
 
 		public int X { get; set; }
 		public int Y { get; set; }
 
-		public lettere (ContentManager content)
+
+		public string NomeLettera {
+			get{
+				return _nomeLettera;
+			}
+		}
+
+		public lettere (ContentManager content,string lettera)
 		{
-			_lettera = content.Load<Texture2D> ("c");
-			_letteraCliccata = content.Load<Texture2D>("c_1");
-			sf = content.Load<SpriteFont> ("Calibri_1");
+			_nomeLettera = lettera;
+			_lettera = content.Load<Texture2D> ("wordel\\"+lettera);
+			_letteraCliccata = content.Load<Texture2D>("wordel\\"+lettera+"_");
+			boom = content.Load<SoundEffect> ("fx_1");
+			sfx = boom.CreateInstance ();
+			//sf = content.Load<SpriteFont> ("Calibri_1");
 			this.isClicked = false;
+
 		}
 
 		public void draw(SpriteBatch sb){
@@ -34,7 +49,7 @@ namespace wordel
 				sb.Draw (_lettera, v, Color.White);
 			}
 
-			sb.DrawString (sf, "X:" + vel.X + "   Y:" + vel.Y, new Vector2 (500, 450), Color.Black);
+			//sb.DrawString (sf, "X:" + vel.X + "   Y:" + vel.Y, new Vector2 (500, 450), Color.Black);
 
 		}
 
@@ -44,6 +59,8 @@ namespace wordel
 			Rectangle rBox = new Rectangle (this.X, this.Y, 48, 48);
 
 			if (rBox.Intersects (rClick)) {
+				if (sfx.State == SoundState.Stopped)
+					sfx.Play ();
 				this.isClicked = true;
 			}
 
@@ -72,6 +89,17 @@ namespace wordel
 			}
 			vel = desiredVelocity;
 			return desiredVelocity;
+		}
+
+		public override bool Equals (Object obj)
+		{
+			var l = obj as lettere;
+			if (l.X == this.X && l.Y == this.Y && l.NomeLettera == this.NomeLettera) {
+				return true;
+			} else { 
+				return false;
+			}
+			
 		}
 
 

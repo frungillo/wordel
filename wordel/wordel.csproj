@@ -67,16 +67,65 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />
-    <AndroidAsset Include="Assets\Content\a.xnb" />
-    <AndroidAsset Include="Assets\Content\b.xnb" />
-    <AndroidAsset Include="Assets\Content\c.xnb" />
     <AndroidAsset Include="Assets\Content\scenario_1.xnb" />
     <AndroidAsset Include="Assets\Content\fx_1.xnb" />
-    <AndroidAsset Include="Assets\Content\c_1.xnb" />
     <AndroidAsset Include="Assets\Content\Calibri_1.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\d.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\d_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\e.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\e_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\f.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\f_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\g.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\g_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\h.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\h_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\i.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\i_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\j.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\j_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\k.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\k_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\l.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\l_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\m.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\m_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\n.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\n_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\o.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\o_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\p.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\p_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\q.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\q_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\r.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\r_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\s.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\s_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\t.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\t_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\u.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\u_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\v.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\v_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\w.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\w_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\x.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\x_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\y.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\y_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\z.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\z_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\a_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\a.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\b_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\b.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\c_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\c.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Content\" />
+    <Folder Include="Assets\Content\wordel\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

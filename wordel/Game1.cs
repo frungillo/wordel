@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework.Input.Touch;
 
 #endregion
 
@@ -19,8 +21,8 @@ namespace wordel
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		Texture2D scenario;
-		SoundEffect boom;
-		lettere l_1, l_2;
+
+		List<lettere> listaLettereInGriglia, listaLettereSelezionate;
 		int xVectorScenario ;
 		Vector2 vectorScenario ;
 
@@ -32,6 +34,26 @@ namespace wordel
 
 		}
 
+		private void GeneraListaLettere()
+		{
+			int letteraX = 250;
+			int letteraY = 20;
+			Random r = new Random ();
+			for (int i = 0; i < 100; i++) {
+				char nomeLettera = (char)r.Next (65, 90);
+				lettere letteraDaAggiungereAllaLista = new lettere (this.Content, nomeLettera.ToString ().ToLower ());
+				letteraDaAggiungereAllaLista.X = letteraX;
+				letteraDaAggiungereAllaLista.Y = letteraY;
+				listaLettereInGriglia.Add (letteraDaAggiungereAllaLista);
+				letteraX += 49;
+				if (letteraX > 691) {
+					letteraY += 49;
+					letteraX = 250;
+				}
+			}
+		}
+
+		/* Lettere maiuscole da 65 a 90*/
 		/// <summary>
 		/// Allows the game to perform any initialization it needs to before starting to run.
 		/// This is where it can query for any required services and load any non-graphic
@@ -41,14 +63,14 @@ namespace wordel
 		protected override void Initialize ()
 		{
 			scenario = Content.Load<Texture2D> ("scenario_1");
-			boom = Content.Load<SoundEffect> ("fx_1");
-			l_1 = new lettere (Content);
-			l_2 = new lettere (Content);
 
+
+			listaLettereInGriglia= new List<lettere>();
+			listaLettereSelezionate = new List<lettere> ();
+			GeneraListaLettere ();
 			xVectorScenario = 250;
 			vectorScenario = new Vector2 (xVectorScenario, 20);
-			l_1.X = 250; l_1.Y = 20;
-			l_2.X = 299; l_2.Y = 20;
+
 
 			base.Initialize ();
 				
@@ -82,8 +104,23 @@ namespace wordel
 			}
 			#endif
 			// TODO: Add your update logic here
-			l_1.Update (gameTime);
-			l_2.Update (gameTime);
+			if (GetInput ()) {
+				foreach (lettere item in listaLettereInGriglia) {
+					System.Threading.Thread.Sleep (7);
+					item.isClicked = false;
+				}
+				listaLettereSelezionate.Clear ();
+			}
+
+			foreach (lettere item in listaLettereInGriglia) {
+				if (item.isClicked) {
+					if (!listaLettereSelezionate.Contains (item))
+						listaLettereSelezionate.Add (item);
+				}
+				item.Update (gameTime);
+			}
+
+			
 
 			base.Update (gameTime);
 		}
@@ -94,7 +131,7 @@ namespace wordel
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw (GameTime gameTime)
 		{
-			graphics.GraphicsDevice.Clear (Color.CornflowerBlue);
+			graphics.GraphicsDevice.Clear (Color.LightGray);
 			SpriteFont sf = Content.Load<SpriteFont> ("Calibri_1");
 
 			/*Inizio il disegno*/
@@ -102,15 +139,37 @@ namespace wordel
 
 			spriteBatch.Draw (scenario, vectorScenario, Color.White);
 
-			spriteBatch.DrawString (sf, "X:" + l_2.X + "   Y:" + l_2.Y, new Vector2 (500, 500), Color.Black);
-
-			l_1.draw (spriteBatch);
-			l_2.draw (spriteBatch);
+			foreach (lettere item in listaLettereInGriglia) {
+				item.draw (spriteBatch);
+			}
+			if (listaLettereSelezionate.Count > 0) {
+				string parola="";
+				foreach (lettere item in listaLettereSelezionate) {
+					parola += item.NomeLettera;
+				}
+				spriteBatch.DrawString (sf, "Parola: " + parola, new Vector2 (500, 500), Color.Black);
+			}
 
 			spriteBatch.End ();
             /*Fine disegno*/
 			base.Draw (gameTime);
 		}
+
+		bool GetInput()
+		{
+			bool isUp = false;
+			//Vector2 desiredVelocity = new Vector2 ();
+
+			TouchCollection touchCollection = TouchPanel.GetState();
+
+			if (touchCollection.Count > 0 && touchCollection[0].State == TouchLocationState.Released )
+			{
+				isUp = true;
+			}
+
+			return isUp;
+		}
+
 	}
 }
 

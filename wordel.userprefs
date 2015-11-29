@@ -1,1 +1,13 @@
-﻿<Properties StartupItem="wordel\wordel.csproj" />
+﻿<Properties StartupItem="wordel/wordel.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.GalaxyTab4" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="wordel/Game1.cs">
+    <Files>
+      <File FileName="wordel/Game1.cs" Line="146" Column="21" />
+      <File FileName="wordel/lettere.cs" Line="101" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
