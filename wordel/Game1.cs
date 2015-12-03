@@ -21,7 +21,7 @@ namespace wordel
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		Texture2D scenario;
-
+		char[] vocali = { (char)65, (char)69, (char)73, (char)79, (char)85 };
 		List<lettere> listaLettereInGriglia, listaLettereSelezionate;
 		int xVectorScenario ;
 		Vector2 vectorScenario ;
@@ -36,19 +36,24 @@ namespace wordel
 
 		private void GeneraListaLettere()
 		{
-			int letteraX = 250;
-			int letteraY = 20;
+			int letteraX = 261;
+			int letteraY = 31;
 			Random r = new Random ();
-			for (int i = 0; i < 100; i++) {
-				char nomeLettera = (char)r.Next (65, 90);
+			for (int i = 0; i < 20; i++) {
+				char nomeLettera;// = (char)r.Next (65, 90);
+				if (i % 2 == 0) {
+					nomeLettera = (char)r.Next (65, 90);
+				} else {
+					nomeLettera = vocali [r.Next (1, 5)];
+				}
 				lettere letteraDaAggiungereAllaLista = new lettere (this.Content, nomeLettera.ToString ().ToLower ());
 				letteraDaAggiungereAllaLista.X = letteraX;
 				letteraDaAggiungereAllaLista.Y = letteraY;
 				listaLettereInGriglia.Add (letteraDaAggiungereAllaLista);
-				letteraX += 49;
+				letteraX += 117;
 				if (letteraX > 691) {
-					letteraY += 49;
-					letteraX = 250;
+					letteraY += 102;
+					letteraX = 261;
 				}
 			}
 		}
@@ -62,7 +67,7 @@ namespace wordel
 		/// </summary>
 		protected override void Initialize ()
 		{
-			scenario = Content.Load<Texture2D> ("scenario_1");
+			scenario = Content.Load<Texture2D> ("wordel\\scenario_2");
 
 
 			listaLettereInGriglia= new List<lettere>();

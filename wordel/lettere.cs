@@ -56,7 +56,7 @@ namespace wordel
 		public void Update (GameTime gt) {
 			Vector2 v = GetDesiredVelocityFromInput ();
 			Rectangle rClick = new Rectangle ((int)v.X, (int)v.Y, 20, 20);
-			Rectangle rBox = new Rectangle (this.X, this.Y, 48, 48);
+			Rectangle rBox = new Rectangle (this.X, this.Y, 70, 70);
 
 			if (rBox.Intersects (rClick)) {
 				if (sfx.State == SoundState.Stopped)
