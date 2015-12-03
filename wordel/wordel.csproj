@@ -70,6 +70,12 @@
     <AndroidAsset Include="Assets\Content\scenario_1.xnb" />
     <AndroidAsset Include="Assets\Content\fx_1.xnb" />
     <AndroidAsset Include="Assets\Content\Calibri_1.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\a.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\a_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\b.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\b_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\c.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\c_.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\d.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\d_.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\e.xnb" />
@@ -102,6 +108,7 @@
     <AndroidAsset Include="Assets\Content\wordel\r_.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\s.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\s_.xnb" />
+    <AndroidAsset Include="Assets\Content\wordel\scenario_2.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\t.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\t_.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\u.xnb" />
@@ -116,12 +123,6 @@
     <AndroidAsset Include="Assets\Content\wordel\y_.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\z.xnb" />
     <AndroidAsset Include="Assets\Content\wordel\z_.xnb" />
-    <AndroidAsset Include="Assets\Content\wordel\a_.xnb" />
-    <AndroidAsset Include="Assets\Content\wordel\a.xnb" />
-    <AndroidAsset Include="Assets\Content\wordel\b_.xnb" />
-    <AndroidAsset Include="Assets\Content\wordel\b.xnb" />
-    <AndroidAsset Include="Assets\Content\wordel\c_.xnb" />
-    <AndroidAsset Include="Assets\Content\wordel\c.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Content\" />
