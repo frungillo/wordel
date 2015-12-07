@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Input.Touch;
+using Android.Widget;
 
 #endregion
 
@@ -26,6 +27,7 @@ namespace wordel
 		int xVectorScenario ;
 		Vector2 vectorScenario ;
 
+
 		public Game1 ()
 		{
 			graphics = new GraphicsDeviceManager (this);
@@ -39,7 +41,7 @@ namespace wordel
 			int letteraX = 261;
 			int letteraY = 31;
 			Random r = new Random ();
-			for (int i = 0; i < 20; i++) {
+			for (int i = 0; i < 25; i++) {
 				char nomeLettera;// = (char)r.Next (65, 90);
 				if (i % 2 == 0) {
 					nomeLettera = (char)r.Next (65, 90);
@@ -51,20 +53,16 @@ namespace wordel
 				letteraDaAggiungereAllaLista.Y = letteraY;
 				listaLettereInGriglia.Add (letteraDaAggiungereAllaLista);
 				letteraX += 117;
-				if (letteraX > 691) {
+				if (letteraX > 729) {
 					letteraY += 102;
 					letteraX = 261;
 				}
 			}
 		}
 
-		/* Lettere maiuscole da 65 a 90*/
-		/// <summary>
-		/// Allows the game to perform any initialization it needs to before starting to run.
-		/// This is where it can query for any required services and load any non-graphic
-		/// related content.  Calling base.Initialize will enumerate through any components
-		/// and initialize them as well.
-		/// </summary>
+		public Texture2D rect;
+		public Vector2 coor;
+
 		protected override void Initialize ()
 		{
 			scenario = Content.Load<Texture2D> ("wordel\\scenario_2");
@@ -76,6 +74,14 @@ namespace wordel
 			xVectorScenario = 250;
 			vectorScenario = new Vector2 (xVectorScenario, 20);
 
+
+			 rect = new Texture2D(graphics.GraphicsDevice, 150, 40);
+
+			Color[] data = new Color[150*40];
+			for(int i=0; i < data.Length; ++i) data[i] = Color.Chocolate;
+			rect.SetData(data);
+
+			 coor = new Vector2(5, 200);
 
 			base.Initialize ();
 				
@@ -108,7 +114,17 @@ namespace wordel
 				Exit ();
 			}
 			#endif
-			// TODO: Add your update logic here
+
+			var buttonRectangle = new Rectangle (5, 200, 150, 20);
+			if (isButtonPressed ().isPressed && buttonRectangle.Contains (isButtonPressed ().x, isButtonPressed ().y)) {
+				foreach (lettere item in listaLettereInGriglia) {
+					//System.Threading.Thread.Sleep (7);
+					item.isClicked = false;
+				}
+				listaLettereSelezionate.Clear ();
+			}
+
+			/*
 			if (GetInput ()) {
 				foreach (lettere item in listaLettereInGriglia) {
 					System.Threading.Thread.Sleep (7);
@@ -116,7 +132,7 @@ namespace wordel
 				}
 				listaLettereSelezionate.Clear ();
 			}
-
+			*/
 			foreach (lettere item in listaLettereInGriglia) {
 				if (item.isClicked) {
 					if (!listaLettereSelezionate.Contains (item))
@@ -139,10 +155,18 @@ namespace wordel
 			graphics.GraphicsDevice.Clear (Color.LightGray);
 			SpriteFont sf = Content.Load<SpriteFont> ("Calibri_1");
 
+
+
+
 			/*Inizio il disegno*/
 			spriteBatch.Begin ();
 
-			spriteBatch.Draw (scenario, vectorScenario, Color.White);
+
+
+			spriteBatch.Draw(rect, coor, Color.White);
+
+
+			//spriteBatch.Draw (scenario, vectorScenario, Color.White);
 
 			foreach (lettere item in listaLettereInGriglia) {
 				item.draw (spriteBatch);
@@ -155,6 +179,7 @@ namespace wordel
 				spriteBatch.DrawString (sf, "Parola: " + parola, new Vector2 (500, 500), Color.Black);
 			}
 
+			spriteBatch.DrawString (sf, "Cancella", new Vector2 (5, 200), Color.Black);
 			spriteBatch.End ();
             /*Fine disegno*/
 			base.Draw (gameTime);
@@ -173,6 +198,36 @@ namespace wordel
 			}
 
 			return isUp;
+		}
+
+		touchPressState isButtonPressed() 
+		{
+			touchPressState st = new touchPressState ();
+			int x = 0;
+			int y = 0;
+			bool isInputPressed = false;
+			var touchPanelState = TouchPanel.GetState();
+			var mouseState = Mouse.GetState();
+			if(touchPanelState.Count >= 1)
+			{
+				var touch = touchPanelState[0];
+				x = (int)touch.Position.X;
+				y = (int)touch.Position.Y;
+
+				isInputPressed = touch.State == TouchLocationState.Pressed || touch.State == TouchLocationState.Moved;
+			}
+			st.isPressed = isInputPressed;
+			st.x = x;
+			st.y = y;
+			return st;
+		}
+
+		private struct touchPressState 
+		{
+			//public touchPressState(){}
+			public bool isPressed{ get; set; }
+			public int x { get; set; }
+			public int y { get; set; }
 		}
 
 	}
