@@ -14,18 +14,16 @@ using Android.Widget;
 
 namespace wordel
 {
-	/// <summary>
-	/// This is the main type for your game.
-	/// </summary>
+	
 	public class Game1 : Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		Texture2D scenario;
+		//Texture2D scenario;
 		char[] vocali = { (char)65, (char)69, (char)73, (char)79, (char)85 };
 		List<lettere> listaLettereInGriglia, listaLettereSelezionate;
 		int xVectorScenario ;
-		Vector2 vectorScenario ;
+		//Vector2 vectorScenario ;
 
 
 		public Game1 ()
@@ -65,14 +63,14 @@ namespace wordel
 
 		protected override void Initialize ()
 		{
-			scenario = Content.Load<Texture2D> ("wordel\\scenario_2");
+			//scenario = Content.Load<Texture2D> ("wordel\\scenario_2");
 
 
 			listaLettereInGriglia= new List<lettere>();
 			listaLettereSelezionate = new List<lettere> ();
 			GeneraListaLettere ();
 			xVectorScenario = 250;
-			vectorScenario = new Vector2 (xVectorScenario, 20);
+			//vectorScenario = new Vector2 (xVectorScenario, 20);
 
 
 			 rect = new Texture2D(graphics.GraphicsDevice, 150, 40);
@@ -81,7 +79,7 @@ namespace wordel
 			for(int i=0; i < data.Length; ++i) data[i] = Color.Chocolate;
 			rect.SetData(data);
 
-			 coor = new Vector2(5, 200);
+			 coor = new Vector2(45, 200);
 
 			base.Initialize ();
 				
@@ -115,12 +113,20 @@ namespace wordel
 			}
 			#endif
 
-			var buttonRectangle = new Rectangle (5, 200, 150, 20);
-			if (isButtonPressed ().isPressed && buttonRectangle.Contains (isButtonPressed ().x, isButtonPressed ().y)) {
+			/*Pulsante Cancella*/
+			var duttonRectangleCancella = new Rectangle (5, 200, 150, 40);
+			if (isButtonPressed ().isPressed && duttonRectangleCancella.Contains (isButtonPressed ().x, isButtonPressed ().y)) {
 				foreach (lettere item in listaLettereInGriglia) {
 					//System.Threading.Thread.Sleep (7);
 					item.isClicked = false;
 				}
+				listaLettereSelezionate.Clear ();
+			}
+
+			/*Pulsante Conferma*/
+			var buttonRectangleConferma = new Rectangle (45, 200, 150, 40);
+			if (isButtonPressed ().isPressed && buttonRectangleConferma.Contains (isButtonPressed ().x, isButtonPressed().y)) {
+				
 				listaLettereSelezionate.Clear ();
 			}
 
@@ -180,6 +186,7 @@ namespace wordel
 			}
 
 			spriteBatch.DrawString (sf, "Cancella", new Vector2 (5, 200), Color.Black);
+			spriteBatch.DrawString (sf, "Conferma", new Vector2 (45, 200), Color.Black);
 			spriteBatch.End ();
             /*Fine disegno*/
 			base.Draw (gameTime);
@@ -189,7 +196,6 @@ namespace wordel
 		{
 			bool isUp = false;
 			//Vector2 desiredVelocity = new Vector2 ();
-
 			TouchCollection touchCollection = TouchPanel.GetState();
 
 			if (touchCollection.Count > 0 && touchCollection[0].State == TouchLocationState.Released )
@@ -207,13 +213,12 @@ namespace wordel
 			int y = 0;
 			bool isInputPressed = false;
 			var touchPanelState = TouchPanel.GetState();
-			var mouseState = Mouse.GetState();
+			//var mouseState = Mouse.GetState();
 			if(touchPanelState.Count >= 1)
 			{
 				var touch = touchPanelState[0];
 				x = (int)touch.Position.X;
 				y = (int)touch.Position.Y;
-
 				isInputPressed = touch.State == TouchLocationState.Pressed || touch.State == TouchLocationState.Moved;
 			}
 			st.isPressed = isInputPressed;
