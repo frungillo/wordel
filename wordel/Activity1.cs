@@ -35,9 +35,10 @@ namespace wordel
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			var g = new Game1 ();
+			var g = new Game1 (this);
 			SetContentView (g.Services.GetService<View> ());
 			g.Run ();
+
 		}
 		/*
 		public override void OnConfigurationChanged(Android.Content.Res.Configuration newConfig)

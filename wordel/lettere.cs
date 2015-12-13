@@ -22,6 +22,16 @@ namespace wordel
 		public int X { get; set; }
 		public int Y { get; set; }
 
+		private bool _annullata;
+
+		public bool Annullata {
+			get {
+				return _annullata;
+			}
+			set {
+				_annullata = value;
+			}
+		}
 
 		public string NomeLettera {
 			get{
@@ -38,6 +48,7 @@ namespace wordel
 			sfx = boom.CreateInstance ();
 			//sf = content.Load<SpriteFont> ("Calibri_1");
 			this.isClicked = false;
+			_annullata = false;
 
 		}
 
@@ -100,6 +111,11 @@ namespace wordel
 				return false;
 			}
 			
+		}
+
+		public override int GetHashCode ()
+		{
+			return base.GetHashCode ();
 		}
 
 
