@@ -32,6 +32,7 @@ namespace wordel
 	    List<string> listaParoleItaliane;
 		bool MostraErroreParola = false;
 
+
 		Thread tError;
 
 		Activity _mainAct;
@@ -123,7 +124,7 @@ namespace wordel
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 
-			//TODO: use this.Content to load your game content here 
+
 		}
 
 
@@ -216,10 +217,8 @@ namespace wordel
 			SpriteFont sf = Content.Load<SpriteFont> ("Calibri_1");
 
 
-
-
 			/*Inizio il disegno*/
-			spriteBatch.Begin ();
+			spriteBatch.Begin();
 
 			//spriteBatch.Draw(rect, coor, Color.White);
 
@@ -251,6 +250,8 @@ namespace wordel
 			}
 
 			spriteBatch.End ();
+
+
             /*Fine disegno*/
 			base.Draw (gameTime);
 		}

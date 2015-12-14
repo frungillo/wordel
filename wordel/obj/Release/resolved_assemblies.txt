@@ -1,0 +1,11 @@
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\wordel.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\Mono.Android.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\MonoGame.Framework.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\mscorlib.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\OpenTK.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\System.Core.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\System.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\System.Xml.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\System.Runtime.Serialization.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\System.ServiceModel.Internals.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\assets\OpenTK-1.0.dll

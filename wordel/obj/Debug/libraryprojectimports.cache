@@ -2,13 +2,13 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>/Users/Genny/Projects/wordel/wordel/obj/Debug/__library_projects__/MonoGame.Framework/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Debug\__library_projects__\MonoGame.Framework\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
-    <ResolvedAssetDirectory>/Users/Genny/Projects/wordel/wordel/obj/Debug/__library_projects__/MonoGame.Framework/library_project_imports/assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Debug\__library_projects__\MonoGame.Framework\library_project_imports\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>/Users/Genny/Projects/wordel/wordel/obj/Debug/__library_projects__/MonoGame.Framework.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Debug\__library_projects__\MonoGame.Framework.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

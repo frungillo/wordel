@@ -1,0 +1,14 @@
+C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Release\wordel.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Release\wordel.pdb
+C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Release\MonoGame.Framework.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Release\MonoGame.Framework.xml
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\wordel.dll
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\wordel.pdb
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\res\drawable\icon.png
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\res\drawable\splash.png
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\res\values\styles.xml
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\R.cs.flag
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\uploadflags.txt
+C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Release\it.dinoale.wordel.apk
+C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Release\it.dinoale.wordel-Signed.apk
+C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Release\android\bin\it.dinoale.wordel.apk

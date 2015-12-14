@@ -4,7 +4,6 @@ C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Debug\wordel.wordel.apk
 C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Debug\wordel.wordel-Signed.apk
 C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Debug\MonoGame.Framework.dll
 C:\Users\frungillo\Documents\Projects\wordel\wordel\bin\Debug\MonoGame.Framework.xml
-C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Debug\wordel.csprojResolveAssemblyReference.cache
 C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Debug\wordel.dll
 C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Debug\wordel.pdb
 C:\Users\frungillo\Documents\Projects\wordel\wordel\obj\Debug\android\bin\wordel.wordel.apk
